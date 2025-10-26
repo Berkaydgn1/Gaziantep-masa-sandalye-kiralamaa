@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gaziantep Masa & Sandalye Kiralama</title>
+  <style>
+    :root {
+      --accent: #ff0000; /* Mor yerine kırmızı */
+      --muted: #f6eef8;
+      --text: #222;
+    }
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0;color:var(--text);background:linear-gradient(180deg,#fff 0%, var(--muted) 100%);}
+    .container{max-width:980px;margin:30px auto;padding:24px;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,0.06);}
+    header{display:flex;gap:16px;align-items:center}
+    .brand{display:flex;flex-direction:column}
+    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8fc4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:8px 0 18px;color:#444}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:24px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr;}}
+    .card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff);}
+    .hero{border-left:6px solid var(--accent);padding-left:14px}
+    h2{margin-top:0}
+    ul.check{padding-left:18px}
+    .prices{display:flex;flex-direction:column;gap:8px}
+    .price-item{display:flex;justify-content:space-between;padding:10px;border-radius:8px;background:#fbf7fb;border:1px solid #f0e6f2}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px}
+    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+    footer{margin-top:18px;font-size:14px;color:#666}
+    .contact{display:flex;flex-direction:column;gap:8px}
+    .note{font-size:13px;color:#666}
+    .divider{height:1px;background:#f0e6f2;margin:12px 0;border-radius:4px}
+    img.logo-icon{width:20px;height:20px}
+
+    /* WhatsApp butonu için özel stil */
+    .btn.whatsapp-btn {
+      background: #25D366; /* WhatsApp yeşili */
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="logo">GA</div>
+      <div class="brand">
+        <h1>Gaziantep Masa &amp; Sandalye Kiralama</h1>
+        <p class="note">Modern, klasik veya sade — her tarza uygun masa ve sandalye seçenekleriyle organizasyonunuza şıklık katıyoruz.</p>
+      </div>
+    </header>
+
+    <section class="grid" style="margin-top:18px">
+      <div>
+        <article class="card hero">
+          <h2>Hayatınızın en özel günü, her detay kusursuz olsun</h2>
+          <p class="lead">Kiralayın, rahat edin — biz her detayı sizin için planlayalım. Zamanında teslimat, temiz ürünler ve güvenilir hizmet anlayışıyla düğün, nişan, kına, sünnet, şirket etkinliği veya özel davetlerinize destek veriyoruz.</p>
+
+          <h3>Hizmetlerimiz</h3>
+          <ul class="check">
+            <li>Yerinde teslimat ve montaj</li>
+            <li>Kumaş giydirme ve masa örtüsü temini</li>
+            <li>Uzun süreli ve tek günlük kiralama seçenekleri</li>
+            <li>Toplu siparişlerde özel fiyatlandırma</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <h3>Popüler Ürünler &amp; Açıklama</h3>
+          <p><strong>Plastik Sandalye:</strong> Sağlam ve ekonomik, açık hava etkinlikleri için uygundur.</p>
+          <p><strong>Tiffany Sandalye:</strong> Şık, davet ve düğünler için tercih edilen klasik model.</p>
+          <p><strong>Kolsuz Sandalye (Banket):</strong> Hafif ve taşınması kolay, birçok dekorasyonla uyumludur.</p>
+          <p><strong>Klasik Masa:</strong> Dikdörtgen banquet veya yuvarlak opsiyonlarıyla yemek servisine uygun.</p>
+          <p><strong>Bistro / Kokteyl Masası:</strong> Yüksek (≈110 cm) kokteyl masaları, bar-stil davetler için ideal.</p>
+
+        </article>
+
+        <article class="card" style="margin-top:14px">
+          <h3>Nikah Masası &amp; Çadır Kiralama</h3>
+          <p><strong>Nikah Masası:</strong> Deri kaplama, lake veya kristal taşlı şık nikah masası modelleri. Şahitler ve nikah memuru için puflar, gelin-damat için arkalıklı sandalyeler.</p>
+          <p><strong>Çadır &amp; Şemsiye:</strong> Protokol çadırları, portatif çadır ve farklı ebatlarda şemsiyeler.</p>
+        </article>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Fiyat Listesi (günlük)</h3>
+          <div class="prices">
+            <div class="price-item"><span>Plastik Sandalye</span><strong>10 – 20 TL</strong></div>
+            <div class="price-item"><span>Tiffany Sandalye</span><strong>60 – 100 TL</strong></div>
+            <div class="price-item"><span>Kolsuz / Banket Sandalye</span><strong>10 – 20 TL</strong></div>
+            <div class="price-item"><span>Klasik Masa (dikdörtgen/yuvarlak)</span><strong>50 – 70 TL</strong></div>
+            <div class="price-item"><span>Bistro / Kokteyl Masa </span><strong>100 – 200 TL</strong></div>
+            
+          </div>
+
+          <p class="note" style="margin-top:10px">Not: Fiyatlar tahmini aralıktadır. Toplu sipariş, mesafe, montaj ve tek-/çok günlük kiralama şartlarına göre değişiklik gösterebilir. Kesin fiyat teklifi için lütfen iletişime geçin.</p>
+
+          <div class="divider"></div>
+
+          <div class="card">
+            <h4>Hızlı İletişim</h4>
+            <div class="contact">
+              <!-- Telefon numarası ve isim -->
+              <a class="btn" href="tel:+905534464146">Hakan Özdemir: 0553 446 41 46</a>
+          
+              <!-- WhatsApp butonu ikonlu, yeşil -->
+              <a class="btn whatsapp-btn" href="https://wa.me/905534464146?text=Merhaba,%20masa%20ve%20sandalye%20kiralama%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="logo-icon">
+                WhatsApp'tan Yaz
+              </a>
+            </div>
+          </div>
+          
+        <div class="card" style="margin-top:14px">
+          <h4>Referans &amp; Güvence</h4>
+          <p class="note">Tüm ürünler düzenli temizlenir, hasarlı ürünler anında değiştirilir. Sigortalı ve tecrübeli ekip ile teslimat sağlanır.</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <p>© <strong>Gaziantep Masa &amp; Sandalye Kiralama</strong>. Tüm hakları saklıdır.</p>
+      <p class="note">
+        İletişim: 
+        <a href="tel:+905534464146">0553 446 41 46</a> • 
+        <a href="https://wa.me/905534464146" target="_blank">WhatsApp'tan Yaz</a>
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
