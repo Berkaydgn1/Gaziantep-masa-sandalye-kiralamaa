@@ -3,133 +3,483 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gaziantep Masa & Sandalye Kiralama</title>
-  <style>
-    :root {
-      --accent: #ff0000; /* Mor yerine kırmızı */
-      --muted: #f6eef8;
-      --text: #222;
-    }
-    *{box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; margin:0;color:var(--text);background:linear-gradient(180deg,#fff 0%, var(--muted) 100%);}
-    .container{max-width:980px;margin:30px auto;padding:24px;background:#fff;border-radius:14px;box-shadow:0 6px 30px rgba(0,0,0,0.06);}
-    header{display:flex;gap:16px;align-items:center}
-    .brand{display:flex;flex-direction:column}
-    .logo{width:72px;height:72px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8fc4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
-    h1{margin:0;font-size:20px}
-    p.lead{margin:8px 0 18px;color:#444}
-    .grid{display:grid;grid-template-columns:1fr 340px;gap:24px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr;}}
-    .card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fff);}
-    .hero{border-left:6px solid var(--accent);padding-left:14px}
-    h2{margin-top:0}
-    ul.check{padding-left:18px}
-    .prices{display:flex;flex-direction:column;gap:8px}
-    .price-item{display:flex;justify-content:space-between;padding:10px;border-radius:8px;background:#fbf7fb;border:1px solid #f0e6f2}
-    .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px}
-    .btn.ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
-    footer{margin-top:18px;font-size:14px;color:#666}
-    .contact{display:flex;flex-direction:column;gap:8px}
-    .note{font-size:13px;color:#666}
-    .divider{height:1px;background:#f0e6f2;margin:12px 0;border-radius:4px}
-    img.logo-icon{width:20px;height:20px}
+  <title>Gaziantep Masa & Sandalye Kiralama | Yunus Özdemir</title>
+  <meta name="description" content="Gaziantep masa sandalye kiralama. Düğün, nişan, kına, organizasyon için hızlı teslimat. Yunus Özdemir 0553 446 41 46" />
 
-    /* WhatsApp butonu için özel stil */
-    .btn.whatsapp-btn {
-      background: #25D366; /* WhatsApp yeşili */
-      color: #fff;
+  <style>
+    :root{
+      --bg:#0f1115;
+      --bg2:#151924;
+      --card:#10131b;
+      --text:#e9eef7;
+      --muted:#a9b4c7;
+      --line:rgba(255,255,255,.08);
+      --accent:#e30613; /* kırmızı vurgu */
+      --accent2:#ff3b30;
+      --ok:#25D366; /* whatsapp */
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 70% -10%, rgba(227,6,19,.22), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, rgba(255,59,48,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, #0b0d12 100%);
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
+
+    /* Top bar / navbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background:rgba(10,12,16,.72);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      height:70px;
+    }
+    .brand{display:flex; gap:12px; align-items:center; text-decoration:none;}
+    .logo{
+      width:44px; height:44px; border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      display:grid; place-items:center;
+      font-weight:900;
+      box-shadow: 0 10px 25px rgba(227,6,19,.25);
+    }
+    .brand b{display:block; font-size:14px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+
+    .menu{display:flex; gap:14px; align-items:center}
+    .menu a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:650;
+      font-size:13px;
+      padding:10px 10px;
+      border-radius:12px;
+    }
+    .menu a:hover{background:rgba(255,255,255,.05); color:var(--text)}
+    .ctaRow{display:flex; gap:10px; align-items:center}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:11px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:800;
+      font-size:13px;
+      border:1px solid transparent;
+      transition:.15s transform ease, .15s opacity ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.red{background:linear-gradient(135deg,var(--accent),var(--accent2));}
+    .btn.ghost{background:transparent; border-color:rgba(227,6,19,.55); color:var(--text)}
+    .btn.whats{background:rgba(37,211,102,.14); border-color:rgba(37,211,102,.35); color:var(--text)}
+    .pill{
+      display:inline-flex; align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:650;
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      padding:42px 0 26px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr}
+      .menu{display:none}
+    }
+
+    .heroLeft{
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1600&q=60");
+      background-size:cover;
+      background-position:center;
+      padding:28px;
+      min-height:360px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    /* Fotoğrafı değiştirmek istersen yukarıdaki url kısmını değiştir. */
+
+    .kicker{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-bottom:12px;
+    }
+    h1{
+      margin:8px 0 10px;
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-.6px;
+    }
+    .lead{
+      margin:0 0 14px;
+      color:#d7deea;
+      max-width:52ch;
+      font-size:14px;
+      line-height:1.55;
+    }
+    .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    .heroRight{
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .infoCard{
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      border-radius:16px;
+      padding:14px;
+    }
+    .infoCard h3{margin:0 0 6px; font-size:14px}
+    .infoCard p{margin:0; color:var(--muted); font-size:13px; line-height:1.5}
+    .smallGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    /* Sections */
+    .section{padding:18px 0 0}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:12px; margin:10px 0 12px;
+    }
+    .sectionTitle h2{margin:0; font-size:18px}
+    .sectionTitle span{color:var(--muted); font-size:13px}
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width:980px){ .cards{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border-radius:var(--radius);
+      padding:16px;
+    }
+    .card h3{margin:0 0 8px; font-size:15px}
+    .card p{margin:0; color:var(--muted); font-size:13px; line-height:1.55}
+
+    /* Prices */
+    .pricesWrap{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+      align-items:start;
+    }
+    @media (max-width:980px){ .pricesWrap{grid-template-columns:1fr} }
+
+    .priceList{display:flex; flex-direction:column; gap:10px}
+    .priceItem{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+    }
+    .priceItem span{color:#dce5f5; font-weight:750; font-size:13px}
+    .priceItem b{color:#fff; font-size:13px}
+    .note{
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.55;
+      margin:0;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      padding:18px 0 26px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12.5px;
+    }
+    footer a{color:#dce5f5; text-decoration:none}
+    footer a:hover{text-decoration:underline}
+
+    /* Floating WhatsApp */
+    .floatWA{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:60;
+      width:54px; height:54px;
+      border-radius:999px;
+      display:grid; place-items:center;
+      background:var(--ok);
+      box-shadow: 0 16px 40px rgba(0,0,0,.45);
+      text-decoration:none;
+    }
+    .floatWA svg{width:26px; height:26px; fill:#fff}
+
+    /* Phone strip (mobile friendly) */
+    .bottomBar{
+      position:fixed;
+      left:0; right:0; bottom:0;
+      background:rgba(10,12,16,.78);
+      backdrop-filter: blur(10px);
+      border-top:1px solid var(--line);
+      padding:10px;
+      z-index:55;
+      display:none;
+    }
+    .bottomBar .row{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 10px;
+      display:flex; gap:10px;
+    }
+    .bottomBar .btn{flex:1}
+    @media (max-width: 980px){
+      .bottomBar{display:block}
+      body{padding-bottom:78px}
     }
   </style>
 </head>
+
 <body>
-  <main class="container">
-    <header>
-      <div class="logo">GA</div>
-      <div class="brand">
-        <h1>Gaziantep Masa &amp; Sandalye Kiralama</h1>
-        <p class="note">Modern, klasik veya sade — her tarza uygun masa ve sandalye seçenekleriyle organizasyonunuza şıklık katıyoruz.</p>
+
+  <!-- TOP NAV -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#anasayfa">
+          <div class="logo">GM</div>
+          <div>
+            <b>Gaziantep Masa & Sandalye</b>
+            <span>7/24 Hızlı Teklif • Yunus Özdemir</span>
+          </div>
+        </a>
+
+        <div class="menu">
+          <a href="#hizmetler">Hizmetler</a>
+          <a href="#fiyatlar">Fiyatlar</a>
+          <a href="#iletisim">İletişim</a>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn ghost" href="tel:+905534464146">Ara: 0553 446 41 46</a>
+          <a class="btn red" href="#fiyatlar">Fiyat Listesi</a>
+        </div>
       </div>
-    </header>
+    </div>
+  </div>
 
-    <section class="grid" style="margin-top:18px">
-      <div>
-        <article class="card hero">
-          <h2>Hayatınızın en özel günü, her detay kusursuz olsun</h2>
-          <p class="lead">Kiralayın, rahat edin — biz her detayı sizin için planlayalım. Zamanında teslimat, temiz ürünler ve güvenilir hizmet anlayışıyla düğün, nişan, kına, sünnet, şirket etkinliği veya özel davetlerinize destek veriyoruz.</p>
+  <!-- HERO -->
+  <section class="hero" id="anasayfa">
+    <div class="wrap">
+      <div class="heroGrid">
 
-          <h3>Hizmetlerimiz</h3>
-          <ul class="check">
-            <li>Yerinde teslimat ve montaj</li>
-            <li>Kumaş giydirme ve masa örtüsü temini</li>
-            <li>Uzun süreli ve tek günlük kiralama seçenekleri</li>
-            <li>Toplu siparişlerde özel fiyatlandırma</li>
-          </ul>
+        <div class="heroLeft">
+          <div>
+            <div class="kicker">
+              <span class="pill">✅ Zamanında teslimat</span>
+              <span class="pill">✅ Temiz & bakımlı ürünler</span>
+              <span class="pill">✅ Toplu sipariş desteği</span>
+            </div>
 
-          <div class="divider"></div>
+            <h1>Organizasyonunuza<br/>şık masa & sandalye kiralama</h1>
+            <p class="lead">
+              Düğün, nişan, kına, sünnet, şirket etkinliği ve özel davetler için
+              hızlı kurulum ve güvenilir hizmet. Teklif almak için hemen arayın.
+            </p>
 
-          <h3>Popüler Ürünler &amp; Açıklama</h3>
-          <p><strong>Plastik Sandalye:</strong> Sağlam ve ekonomik, açık hava etkinlikleri için uygundur.</p>
-          <p><strong>Tiffany Sandalye:</strong> Şık, davet ve düğünler için tercih edilen klasik model.</p>
-          <p><strong>Kolsuz Sandalye (Banket):</strong> Hafif ve taşınması kolay, birçok dekorasyonla uyumludur.</p>
-          <p><strong>Klasik Masa:</strong> Dikdörtgen banquet veya yuvarlak opsiyonlarıyla yemek servisine uygun.</p>
-          <p><strong>Bistro / Kokteyl Masası:</strong> Yüksek (≈110 cm) kokteyl masaları, bar-stil davetler için ideal.</p>
-
-        </article>
-
-        <article class="card" style="margin-top:14px">
-          <h3>Nikah Masası &amp; Çadır Kiralama</h3>
-          <p><strong>Nikah Masası:</strong> Deri kaplama, lake veya kristal taşlı şık nikah masası modelleri. Şahitler ve nikah memuru için puflar, gelin-damat için arkalıklı sandalyeler.</p>
-          <p><strong>Çadır &amp; Şemsiye:</strong> Protokol çadırları, portatif çadır ve farklı ebatlarda şemsiyeler.</p>
-        </article>
-
-      </div>
-
-      <aside>
-        <div class="card">
-          <h3>Fiyat Listesi (günlük)</h3>
-          <div class="prices">
-            <div class="price-item"><span>Plastik Sandalye</span><strong>10 – 20 TL</strong></div>
-            <div class="price-item"><span>Tiffany Sandalye</span><strong>60 – 100 TL</strong></div>
-            <div class="price-item"><span>Kolsuz / Banket Sandalye</span><strong>10 – 20 TL</strong></div>
-            <div class="price-item"><span>Klasik Masa (dikdörtgen/yuvarlak)</span><strong>50 – 70 TL</strong></div>
-            <div class="price-item"><span>Bistro / Kokteyl Masa </span><strong>100 – 200 TL</strong></div>
-            
+            <div class="heroActions">
+              <a class="btn red" href="tel:+905534464146">📞 Hemen Ara</a>
+              <a class="btn whats" target="_blank"
+                 href="https://wa.me/905534464146?text=Merhaba,%20masa%20ve%20sandalye%20kiralama%20hakkında%20bilgi%20almak%20istiyorum.">
+                💬 WhatsApp
+              </a>
+              <a class="btn ghost" href="#fiyatlar">💰 Fiyatları Gör</a>
+            </div>
           </div>
 
-          <p class="note" style="margin-top:10px">Not: Fiyatlar tahmini aralıktadır. Toplu sipariş, mesafe, montaj ve tek-/çok günlük kiralama şartlarına göre değişiklik gösterebilir. Kesin fiyat teklifi için lütfen iletişime geçin.</p>
+          <p class="note" style="margin:0">
+            * Görsel temsili. İstersen bu fotoğrafı kendi masa-sandalye görselinle değiştirebilirsin.
+          </p>
+        </div>
 
-          <div class="divider"></div>
-
-          <div class="card">
-            <h4>Hızlı İletişim</h4>
-            <div class="contact">
-              <!-- Telefon numarası ve isim -->
-              <a class="btn" href="tel:+905534464146">Hakan Özdemir: 0553 446 41 46</a>
-          
-              <!-- WhatsApp butonu ikonlu, yeşil -->
-              <a class="btn whatsapp-btn" href="https://wa.me/905534464146?text=Merhaba,%20masa%20ve%20sandalye%20kiralama%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="logo-icon">
-                WhatsApp'tan Yaz
+        <aside class="heroRight" id="iletisim">
+          <div class="infoCard">
+            <h3>Hızlı İletişim</h3>
+            <p><b>Yunus Özdemir</b> — <a href="tel:+905534464146">0553 446 41 46</a></p>
+            <p class="note" style="margin-top:6px">
+              WhatsApp’tan yaz, hızlıca fiyat/uygunluk bilgisi dönelim.
+            </p>
+            <div class="heroActions" style="margin-top:10px">
+              <a class="btn red" href="tel:+905534464146">📞 Ara</a>
+              <a class="btn whats" target="_blank"
+                 href="https://wa.me/905534464146?text=Merhaba,%20organizasyon%20i%C3%A7in%20masa%20sandalye%20kiralamak%20istiyorum.%20Fiyat%20ve%20m%C3%BCsaitlik%20alabilir%20miyim%3F">
+                💬 WhatsApp
               </a>
             </div>
           </div>
-          
-        <div class="card" style="margin-top:14px">
-          <h4>Referans &amp; Güvence</h4>
-          <p class="note">Tüm ürünler düzenli temizlenir, hasarlı ürünler anında değiştirilir. Sigortalı ve tecrübeli ekip ile teslimat sağlanır.</p>
-        </div>
-      </aside>
-    </section>
 
-    <footer>
-      <p>© <strong>Gaziantep Masa &amp; Sandalye Kiralama</strong>. Tüm hakları saklıdır.</p>
-      <p class="note">
-        İletişim: 
-        <a href="tel:+905534464146">0553 446 41 46</a> • 
-        <a href="https://wa.me/905534464146" target="_blank">WhatsApp'tan Yaz</a>
-      </p>
-    </footer>
-  </main>
+          <div class="smallGrid">
+            <div class="infoCard">
+              <h3>Hizmet Bölgesi</h3>
+              <p>Gaziantep geneli</p>
+              <p class="note">İlçe/mahalle listesi yok.</p>
+            </div>
+            <div class="infoCard">
+              <h3>Çalışma</h3>
+              <p>7/24 iletişim</p>
+              <p class="note">Aynı gün kurulum mümkün</p>
+            </div>
+          </div>
+
+          <div class="infoCard">
+            <h3>Güvence</h3>
+            <p>Ürünler düzenli temizlenir, hasarlı ürün anında değişir.</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="hizmetler">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <h2>Hizmetler</h2>
+        <span>Kurulum • Teslimat • Toplu sipariş</span>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Yerinde Teslimat & Kurulum</h3>
+          <p>Organizasyon alanınıza zamanında teslim eder, kurulumu tamamlarız.</p>
+        </div>
+        <div class="card">
+          <h3>Masa Örtüsü & Giydirme</h3>
+          <p>İsteğe göre kumaş giydirme ve masa örtüsü desteği sağlanır.</p>
+        </div>
+        <div class="card">
+          <h3>Tek Gün / Uzun Süre Kiralama</h3>
+          <p>Etkinliğinize göre esnek kiralama seçenekleriyle ilerleriz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="section" id="fiyatlar">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <h2>Fiyat Listesi (Günlük)</h2>
+        <span>Toplu siparişe göre değişebilir</span>
+      </div>
+
+      <div class="pricesWrap">
+        <div class="card">
+          <div class="priceList">
+            <div class="priceItem"><span>Plastik Sandalye</span><b>10 – 20 TL</b></div>
+            <div class="priceItem"><span>Tiffany Sandalye</span><b>60 – 100 TL</b></div>
+            <div class="priceItem"><span>Kolsuz / Banket Sandalye</span><b>10 – 20 TL</b></div>
+            <div class="priceItem"><span>Klasik Masa (dikdörtgen/yuvarlak)</span><b>50 – 70 TL</b></div>
+            <div class="priceItem"><span>Bistro / Kokteyl Masa</span><b>100 – 200 TL</b></div>
+          </div>
+
+          <p class="note" style="margin-top:10px">
+            Not: Fiyatlar tahmini aralıktadır. Mesafe, montaj ve süreye göre değişebilir.
+            Kesin fiyat için arayın veya WhatsApp’tan yazın.
+          </p>
+
+          <div class="heroActions" style="margin-top:12px">
+            <a class="btn red" href="tel:+905534464146">📞 Yunus Özdemir’i Ara</a>
+            <a class="btn whats" target="_blank"
+               href="https://wa.me/905534464146?text=Merhaba,%20fiyat%20listesini%20g%C3%B6rd%C3%BCm.%20Organizasyon%20i%C3%A7in%20teklif%20alabilir%20miyim%3F">
+              💬 WhatsApp’tan Teklif Al
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Popüler Ürünler</h3>
+          <p class="note"><b>Plastik Sandalye:</b> Ekonomik, açık hava için ideal.</p>
+          <p class="note"><b>Tiffany Sandalye:</b> Şık davet ve düğünlerde sık tercih edilir.</p>
+          <p class="note"><b>Banket Sandalye:</b> Hafif, taşınması kolay.</p>
+          <p class="note"><b>Klasik Masa:</b> Dikdörtgen / yuvarlak seçenek.</p>
+          <p class="note"><b>Kokteyl Masası:</b> Bar-stil davetler için yüksek model.</p>
+
+          <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
+
+          <h3 style="margin:0 0 8px">Nikah Masası & Çadır</h3>
+          <p class="note">
+            İsteğe bağlı: nikah masası, şemsiye/çadır çözümleri.
+          </p>
+        </div>
+      </div>
+
+      <footer>
+        © <b>Gaziantep Masa & Sandalye Kiralama</b> — İletişim:
+        <a href="tel:+905534464146">0553 446 41 46</a> •
+        <a target="_blank" href="https://wa.me/905534464146">WhatsApp</a>
+      </footer>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp -->
+  <a class="floatWA" target="_blank"
+     href="https://wa.me/905534464146?text=Merhaba,%20masa%20sandalye%20kiralama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+    <!-- WhatsApp icon (inline SVG) -->
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.44c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.13-.17.19-.34.22-.63.08-.29-.14-1.21-.45-2.3-1.42-.85-.75-1.42-1.68-1.59-1.97-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49l-.55-.01c-.19 0-.51.07-.78.36-.26.29-1.02.99-1.02 2.42s1.04 2.82 1.18 3.02c.14.19 2.05 3.14 4.98 4.4.7.3 1.25.48 1.68.62.71.23 1.35.2 1.86.12.57-.08 1.7-.69 1.94-1.36.24-.67.24-1.25.17-1.36-.07-.12-.26-.19-.55-.33zM16.03 27.5h-.01c-2.02 0-4-.54-5.73-1.56l-.41-.24-4.04 1.06 1.08-3.94-.27-.43C5.57 20.6 5 18.57 5 16.5 5 10.71 10.03 6 16.03 6c2.9 0 5.62 1.1 7.67 3.1 2.05 2 3.18 4.67 3.18 7.51 0 5.79-5.03 10.89-10.85 10.89zm9.35-20.95C23.03 4.26 19.66 3 16.03 3 8.84 3 3 8.66 3 15.61c0 2.44.72 4.82 2.08 6.86L3 29l6.73-1.77c1.98 1.07 4.2 1.63 6.29 1.63h.01C23.2 28.86 29 23.2 29 16.25c0-3.37-1.35-6.55-3.62-8.7z"/>
+    </svg>
+  </a>
+
+  <!-- Mobile bottom bar -->
+  <div class="bottomBar">
+    <div class="row">
+      <a class="btn red" href="tel:+905534464146">📞 Ara</a>
+      <a class="btn whats" target="_blank"
+         href="https://wa.me/905534464146?text=Merhaba,%20masa%20sandalye%20kiralama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">
+        💬 WhatsApp
+      </a>
+    </div>
+  </div>
+
 </body>
 </html>
